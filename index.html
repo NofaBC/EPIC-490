@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epic 490 AI Ecosystem — Phase 1 Prototype</title>
+  <style>
+    :root{--bg:#08111f;--panel:#0f1c31;--panel2:#14243e;--text:#eef5ff;--muted:#9fb0c9;--accent:#6dd6ff;--accent2:#92f3c7;--line:#223958;--warn:#ffd47a}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(135deg,#07101d,#0c1930 55%,#102340);color:var(--text);min-height:100vh}
+    button,input,textarea{font:inherit}.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}.sidebar{background:rgba(5,12,24,.84);border-right:1px solid var(--line);padding:26px 18px;position:sticky;top:0;height:100vh}.brand{font-size:22px;font-weight:800;letter-spacing:.3px}.tag{font-size:12px;color:var(--accent2);margin-top:5px}.nav{margin-top:28px;display:grid;gap:8px}.nav button{background:transparent;color:var(--muted);border:1px solid transparent;text-align:left;padding:11px 12px;border-radius:10px;cursor:pointer}.nav button:hover,.nav button.active{background:#11233d;color:white;border-color:#244263}.small{font-size:12px;color:var(--muted);line-height:1.5}.sidebar .small{position:absolute;bottom:20px;left:18px;right:18px}.main{padding:28px}.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.eyebrow{color:var(--accent);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px}.h1{font-size:38px;line-height:1.05;margin:8px 0 8px}.lead{color:var(--muted);max-width:800px;line-height:1.6}.pill{padding:8px 12px;border:1px solid #2f5377;border-radius:999px;color:#bfe8ff;background:#0c1b2e;font-size:12px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:24px}.card{background:linear-gradient(180deg,rgba(20,36,62,.96),rgba(12,26,45,.96));border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 12px 32px rgba(0,0,0,.18)}.card h3{margin:8px 0}.card p{color:var(--muted);line-height:1.55;font-size:14px}.icon{font-size:24px}.cta{margin-top:14px;background:linear-gradient(90deg,#2c9ed0,#3bbf92);border:none;color:#03111d;padding:10px 13px;border-radius:10px;font-weight:800;cursor:pointer}.secondary{background:transparent;border:1px solid #35597d;color:#d9efff}.section{margin-top:30px}.section h2{margin-bottom:12px}.twocol{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}.step{padding:12px;border:1px solid var(--line);border-radius:10px;color:var(--muted);font-size:13px}.step.on{color:#06111b;background:var(--accent2);font-weight:800}.chat{height:360px;display:flex;flex-direction:column}.messages{flex:1;overflow:auto;padding-right:4px}.msg{max-width:88%;padding:11px 12px;border-radius:12px;margin:8px 0;line-height:1.5;font-size:14px}.bot{background:#132945;border:1px solid #24486f}.user{background:#1f6b73;margin-left:auto}.composer{display:flex;gap:8px;margin-top:10px}.composer input{flex:1;background:#081528;border:1px solid #294969;color:white;border-radius:10px;padding:11px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#0c1a2c;border:1px solid var(--line);padding:13px;border-radius:12px}.stat b{font-size:22px}.hidden{display:none}.expert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.expert{cursor:pointer}.expert.selected{outline:2px solid var(--accent)}.notice{border:1px solid #5d4d2b;background:#271f11;color:#ffe4a7;padding:12px 14px;border-radius:12px;font-size:13px;margin-top:18px}.footer{margin:30px 0 8px;color:#7087a5;font-size:12px}
+    @media(max-width:1000px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.sidebar .small{position:static;margin-top:20px}.grid{grid-template-columns:repeat(2,1fr)}.twocol{grid-template-columns:1fr}.expert-grid{grid-template-columns:1fr}.journey{grid-template-columns:1fr}.main{padding:20px}}
+    @media(max-width:600px){.grid{grid-template-columns:1fr}.h1{font-size:30px}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">EPIC 490</div>
+    <div class="tag">AI Growth Ecosystem</div>
+    <div class="nav">
+      <button class="active" onclick="showView('home',this)">⌂ Dashboard</button>
+      <button onclick="showView('journey',this)">◎ My Journey</button>
+      <button onclick="showView('experts',this)">◈ Experts & Programs</button>
+      <button onclick="showView('guide',this)">✦ AI Guide</button>
+      <button onclick="showView('community',this)">◌ Community</button>
+    </div>
+    <div class="small">Concept prototype for Daniel Shorter.<br>Designed by NOFA AI Factory™.<br><br>This version demonstrates workflow and platform vision only.</div>
+  </aside>
+
+  <main class="main">
+    <section id="home" class="view">
+      <div class="top"><div><div class="eyebrow">Welcome to your growth ecosystem</div><div class="h1">Where do you want to grow next?</div><div class="lead">Epic 490 connects people to structured coaching journeys, trusted experts, community programs, and an AI guide that helps turn goals into next steps.</div></div><div class="pill">Phase 1 Prototype</div></div>
+      <div class="grid">
+        <div class="card"><div class="icon">🧭</div><h3>Leadership & Business</h3><p>Clarify priorities, strengthen leadership, and turn goals into measurable action.</p><button class="cta" onclick="startPath('Leadership & Business')">Start pathway</button></div>
+        <div class="card"><div class="icon">🌿</div><h3>Health & Wellness</h3><p>Join guided wellness programs and build sustainable habits with expert support.</p><button class="cta" onclick="startPath('Health & Wellness')">Explore program</button></div>
+        <div class="card"><div class="icon">🏘️</div><h3>Community Growth</h3><p>Connect local people, skills, businesses, and resources to strengthen the community.</p><button class="cta" onclick="startPath('Community & Economic Growth')">Explore community</button></div>
+        <div class="card"><div class="icon">🤝</div><h3>Find an Expert</h3><p>Get matched with the right coach, advisor, specialist, or program for your goal.</p><button class="cta" onclick="showView('experts')">Meet experts</button></div>
+      </div>
+
+      <div class="section twocol">
+        <div class="card">
+          <div class="eyebrow">My Journey</div><h2>From intention to measurable progress</h2>
+          <div class="journey"><div class="step on">1. Assess</div><div class="step">2. Define Goal</div><div class="step">3. Choose Path</div><div class="step">4. Take Action</div><div class="step">5. Review</div></div>
+          <p class="lead">Your journey adapts as your goals change. Epic 490 can recommend resources, programs, expert sessions, and next actions based on your progress.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Platform Snapshot</div><h2>One ecosystem, many pathways</h2>
+          <div class="stats"><div class="stat"><b>2</b><div class="small">Initial expert ecosystems</div></div><div class="stat"><b>4</b><div class="small">Primary pathways</div></div><div class="stat"><b>1</b><div class="small">Unified AI guide</div></div></div>
+          <div class="notice">Future Phase 2: independent expert environments, tenant controls, subscriptions, analytics, and scalable onboarding.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="view hidden">
+      <div class="eyebrow">My Journey</div><div class="h1">Your personalized growth path</div><div class="lead">A structured experience helps members move from self-assessment to action, accountability, and expert support.</div>
+      <div class="section card"><h2 id="journeyTitle">Current pathway: Leadership & Business</h2><div class="journey"><div class="step on">Assessment complete</div><div class="step on">Goal selected</div><div class="step">Recommended program</div><div class="step">Action plan</div><div class="step">Progress review</div></div><p class="lead">Prototype example: “Build a stronger leadership operating rhythm for my organization over the next 90 days.”</p><button class="cta" onclick="showView('guide')">Ask the AI Guide what to do next</button></div>
+    </section>
+
+    <section id="experts" class="view hidden">
+      <div class="eyebrow">Experts & Programs</div><div class="h1">Human expertise, amplified by AI</div><div class="lead">Epic 490 can house multiple programs while preserving each expert's framework, identity, and client experience.</div>
+      <div class="section expert-grid">
+        <div class="card expert selected"><div class="icon">👤</div><h3>Daniel Shorter</h3><p>Leadership, business development, community transformation, and the Epic 490 framework.</p><button class="cta" onclick="book('Daniel')">Book with Daniel</button></div>
+        <div class="card expert"><div class="icon">🌱</div><h3>Health & Wellness Program</h3><p>A dedicated cohort environment led by a wellness expert, with its own journey and AI knowledge layer.</p><button class="cta secondary" onclick="startPath('Health & Wellness')">View pathway</button></div>
+        <div class="card expert"><div class="icon">＋</div><h3>Future Epic 490 Expert</h3><p>Future experts could operate their own programs inside the broader Epic 490 ecosystem.</p><button class="cta secondary" onclick="alert('Phase 2 concept: expert onboarding and tenant creation.')">Become an expert</button></div>
+      </div>
+    </section>
+
+    <section id="guide" class="view hidden">
+      <div class="eyebrow">Epic 490 AI Guide</div><div class="h1">A guide—not a replacement for the expert</div><div class="lead">The AI helps users clarify goals, navigate programs, and recognize when a human coach should step in.</div>
+      <div class="section twocol">
+        <div class="card chat"><div class="messages" id="messages"><div class="msg bot">Hi, I'm your Epic 490 AI Guide. Tell me what you're trying to improve right now—leadership, business, health, or community impact—and I'll help identify a practical next step.</div></div><div class="composer"><input id="chatInput" placeholder="Example: I want to become a stronger leader..." onkeydown="if(event.key==='Enter')sendMsg()"><button class="cta" onclick="sendMsg()">Send</button></div></div>
+        <div class="card"><h2>Smart human handoff</h2><p class="lead">When the user reaches a point where coaching, accountability, or specialized judgment is valuable, the AI can route them directly to the appropriate expert.</p><button class="cta" onclick="book('Daniel')">Book a coaching conversation</button><button class="cta secondary" onclick="showView('experts')">Explore other programs</button></div>
+      </div>
+    </section>
+
+    <section id="community" class="view hidden">
+      <div class="eyebrow">Community</div><div class="h1">Local growth can become a repeatable system</div><div class="lead">Epic 490 can connect residents, experts, entrepreneurs, programs, and resources around shared outcomes in Pasadena, Altadena, and future communities.</div>
+      <div class="grid"><div class="card"><h3>Local Business</h3><p>Leadership cohorts, owner support, skill building, and referrals.</p></div><div class="card"><h3>Health</h3><p>Expert-led wellness cohorts with structured member journeys.</p></div><div class="card"><h3>Coaching</h3><p>Trusted specialists operating inside a unified platform experience.</p></div><div class="card"><h3>Community Resources</h3><p>Future directory, events, programs, and local opportunity matching.</p></div></div>
+    </section>
+    <div class="footer">Epic 490 Phase 1 Concept Prototype • Prepared by NOFA AI Factory™ • Not a production system</div>
+  </main>
+</div>
+<script>
+function showView(id,btn){document.querySelectorAll('.view').forEach(v=>v.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function startPath(name){document.getElementById('journeyTitle').textContent='Current pathway: '+name;showView('journey')}
+function book(who){alert('Prototype handoff: this button can connect to '+who+"'s Calendly in production.")}
+function sendMsg(){const input=document.getElementById('chatInput');const text=input.value.trim();if(!text)return;const box=document.getElementById('messages');box.innerHTML+=`<div class="msg user">${escapeHtml(text)}</div>`;input.value='';setTimeout(()=>{let reply='A good first step is to clarify the outcome you want over the next 30–90 days. I can then recommend a pathway, resource, or expert conversation.';const t=text.toLowerCase();if(t.includes('leader'))reply='For leadership growth, I would start with a short assessment of your current team, decision-making, communication, and accountability. From there, Epic 490 can recommend a leadership pathway and determine whether a session with Daniel would accelerate progress.';else if(t.includes('health'))reply='For a health goal, I would route you into the Health & Wellness pathway, identify your desired outcome, and connect you with the appropriate expert-led cohort. The AI would support the journey between human sessions.';else if(t.includes('business'))reply='For business growth, I would first identify whether the priority is revenue, positioning, operations, leadership, or execution. That determines the most useful Epic 490 program and whether Daniel should be brought into the conversation.';box.innerHTML+=`<div class="msg bot">${reply}</div>`;box.scrollTop=box.scrollHeight},450)}
+function escapeHtml(s){return s.replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+</script>
+</body>
+</html>
